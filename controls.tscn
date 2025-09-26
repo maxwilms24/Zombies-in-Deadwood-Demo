@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://cj3weyck77exj"]
+
+[ext_resource type="Script" uid="uid://6x5y4m6qrb0a" path="res://controls.gd" id="1_qo8cm"]
+[ext_resource type="Texture2D" uid="uid://bp5nwrqhb4h1t" path="res://Images/controls.png" id="2_xwvqn"]
+[ext_resource type="Texture2D" uid="uid://dg7vnjof2k2po" path="res://Images/bacnk button.png" id="3_xwvqn"]
+
+[node name="Controls" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1908.0
+offset_bottom = 948.0
+script = ExtResource("1_qo8cm")
+
+[node name="Menu" type="Button" parent="."]
+layout_mode = 0
+offset_left = 853.0
+offset_top = 749.0
+offset_right = 1108.0
+offset_bottom = 824.0
+mouse_default_cursor_shape = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("2_xwvqn")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(977, 789)
+texture = ExtResource("3_xwvqn")
+
+[connection signal="pressed" from="Menu" to="." method="_on_menu_pressed"]

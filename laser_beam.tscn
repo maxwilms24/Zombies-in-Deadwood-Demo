@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpa4nnjn2vm00"]
+
+[ext_resource type="Script" uid="uid://dommlymedyjir" path="res://laser_beam.gd" id="1_t1d0h"]
+[ext_resource type="AudioStream" uid="uid://cl68spij3gsvh" path="res://sfx/laser.wav" id="2_dqaer"]
+
+[node name="LaserBeam" type="RayCast2D"]
+target_position = Vector2(2000, 0)
+collision_mask = 15
+script = ExtResource("1_t1d0h")
+
+[node name="Line2D" type="Line2D" parent="."]
+default_color = Color(0.91032666, 0.0006686324, 0.9103204, 1)
+
+[node name="DamageTimer" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_dqaer")
+autoplay = true

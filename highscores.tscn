@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://diux87gv7s3sq"]
+
+[ext_resource type="Script" uid="uid://btqmtl3mgfytt" path="res://highscores.gd" id="1_ft6a4"]
+[ext_resource type="Texture2D" uid="uid://cbld0t8v4f2py" path="res://Images/highscores.png" id="2_tvw71"]
+[ext_resource type="Texture2D" uid="uid://dg7vnjof2k2po" path="res://Images/bacnk button.png" id="3_b6mkm"]
+
+[node name="Highscores" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1908.0
+offset_bottom = 948.0
+script = ExtResource("1_ft6a4")
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 822.0
+offset_top = 769.0
+offset_right = 1075.0
+offset_bottom = 850.0
+mouse_default_cursor_shape = 2
+text = "terug
+"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(954, 474)
+texture = ExtResource("2_tvw71")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(945, 811)
+texture = ExtResource("3_b6mkm")
+
+[node name="ScoresContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 663.0
+offset_top = 265.0
+offset_right = 1239.0
+offset_bottom = 688.0
+theme_override_constants/separation = 15
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

@@ -1,0 +1,67 @@
+[gd_scene load_steps=10 format=3 uid="uid://10rdxv4t0gl5"]
+
+[ext_resource type="Script" uid="uid://bmkg3yy1pwhgh" path="res://enemy.gd" id="1_qi2p4"]
+[ext_resource type="AudioStream" uid="uid://c0ll4uq13bimd" path="res://sfx/zombie_death1.wav" id="2_3yqyl"]
+[ext_resource type="Texture2D" uid="uid://cq040415aochs" path="res://Images/zombie.png" id="2_4gyqm"]
+[ext_resource type="AudioStream" uid="uid://cpyxlxuh6gp0c" path="res://sfx/Zombie_attack.wav" id="3_qi2p4"]
+[ext_resource type="AudioStream" uid="uid://b6vesqv1ymq2h" path="res://sfx/zombie_death2.wav" id="3_wujgv"]
+[ext_resource type="AudioStream" uid="uid://3n476gdh3iqn" path="res://sfx/zombie_death3.wav" id="4_hb8ge"]
+[ext_resource type="AudioStream" uid="uid://bujmpf46fanuu" path="res://sfx/Soul_collect.wav" id="5_wujgv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3yqyl"]
+radius = 39.0128
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qi2p4"]
+radius = 40.0
+
+[node name="Enemy" type="CharacterBody2D" groups=["enemies"]]
+collision_layer = 2
+collision_mask = 7
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_qi2p4")
+death_sounds = Array[AudioStream]([ExtResource("2_3yqyl"), ExtResource("3_wujgv"), ExtResource("4_hb8ge")])
+soul_death_sound = ExtResource("5_wujgv")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+visible = false
+color = Color(0, 0.712715, 0.313443, 1)
+polygon = PackedVector2Array(-21, -23, -22, 31, 27, 30, 25, -25)
+
+[node name="ProximityDetector" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 16
+
+[node name="ProximityDetector" type="CollisionShape2D" parent="ProximityDetector"]
+shape = SubResource("CircleShape2D_3yqyl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 2)
+shape = SubResource("CircleShape2D_qi2p4")
+
+[node name="PlayerSprite" type="Sprite2D" parent="."]
+rotation = -1.5708
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_4gyqm")
+
+[node name="DamageTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="AttackCooldownTimer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_qi2p4")
+
+[node name="DeathSoundPlayer" type="AudioStreamPlayer2D" parent="."]
+
+[connection signal="timeout" from="DamageTimer" to="." method="_on_damage_timer_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="AttackCooldownTimer" to="." method="_on_attack_cooldown_timer_timeout"]

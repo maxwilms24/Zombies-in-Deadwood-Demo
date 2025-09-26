@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://sbel06yr2xhf"]
+
+[ext_resource type="Script" uid="uid://daru0axxo1oy3" path="res://gun_purchase_area.gd" id="1_82vq4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w1flv"]
+radius = 126.016
+
+[node name="GunPurchaseArea" type="Area2D"]
+collision_layer = 14
+script = ExtResource("1_82vq4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_w1flv")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PromptLabel" type="Label" parent="CanvasLayer"]
+offset_left = 273.0
+offset_top = 446.0
+offset_right = 313.0
+offset_bottom = 469.0
+size_flags_horizontal = 4
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

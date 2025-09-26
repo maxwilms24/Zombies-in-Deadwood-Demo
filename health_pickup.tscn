@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://xad17idydknt"]
+
+[ext_resource type="Script" uid="uid://fdg8qjhmd8k5" path="res://health_pickup.gd" id="1_awyve"]
+[ext_resource type="Texture2D" uid="uid://0dpdcdi0nq7s" path="res://Images/health.png" id="2_awyve"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_awyve"]
+radius = 23.0217
+
+[node name="HealthPickup" type="Area2D"]
+script = ExtResource("1_awyve")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.238986, 0.238986)
+texture = ExtResource("2_awyve")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_awyve")
+metadata/_edit_lock_ = true

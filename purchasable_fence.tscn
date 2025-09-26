@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://4pxlae6xe0jy"]
+
+[ext_resource type="Texture2D" uid="uid://c5iqrr053741w" path="res://Images/Fence.png" id="1_6lnoq"]
+[ext_resource type="Script" uid="uid://cuf1jnqfit8bi" path="res://purchasable_fence.gd" id="1_lnr1h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lnr1h"]
+size = Vector2(25, 107)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gwatn"]
+size = Vector2(70, 139)
+
+[node name="PurchasableFence" type="StaticBody2D"]
+collision_layer = 8
+script = ExtResource("1_lnr1h")
+cost = 500
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_6lnoq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_lnr1h")
+
+[node name="InteractionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(-1, -1.5)
+shape = SubResource("RectangleShape2D_gwatn")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PurchasePrompt" type="Label" parent="CanvasLayer"]
+offset_left = 510.0
+offset_top = 399.0
+offset_right = 550.0
+offset_bottom = 426.0

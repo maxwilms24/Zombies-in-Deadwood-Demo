@@ -1,0 +1,75 @@
+[gd_scene load_steps=5 format=3 uid="uid://dstbbvvbk16bv"]
+
+[ext_resource type="Script" uid="uid://bxdnig8rvt21w" path="res://cutscene.gd" id="1_ye7fo"]
+[ext_resource type="Texture2D" uid="uid://c0uundevxnbhs" path="res://Images/output-onlinetools.png" id="2_8vcau"]
+[ext_resource type="AudioStream" uid="uid://cehcsna2aw2j0" path="res://sfx/deliverance.wav" id="2_ix241"]
+[ext_resource type="AudioStream" uid="uid://bolyqmm5y6cmo" path="res://sfx/ElevenLabs_2025-09-23T13_09_57_John Morgan - Old West Southern Cowboy_pvc_sp93_s50_sb75_se65_b_m2.mp3" id="4_bl24s"]
+
+[node name="Cutscene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ye7fo")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(1908, 948)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.080783345, 0.080783345, 0.080783345, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="ColorRect"]
+position = Vector2(954.00006, 474)
+scale = Vector2(2.3850002, 1.6838366)
+texture = ExtResource("2_8vcau")
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 78.0
+offset_top = 116.0
+offset_right = 1872.0
+offset_bottom = 797.0
+theme_override_constants/line_spacing = 15
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 46
+text = "In het dorp Deadwood heeft een mysterieuze plaag de doden uit hun graven doen herrijzen. 
+Deze hordes zombies hebben de bevolking uitgemoord, en de straten roodgekleurd.
+
+
+
+Jij, een beruchte cowboy, bent de laatste die nog ademt in dit verdoemde oord.
+ Gedreven door een ijzersterk overlevingsinstinct en een diep verlangen om deze gruwel te stoppen,
+ is het aan jou om de hordes zombies te verslaan, het dorp Deadwood terug te eisen van de doden,
+ en misschien... heel misschien... de oorzaak van deze plaag te ontdekken.
+
+
+De tijd tikt. De straten roepen. Pak je revolver, cowboy. De hunt begint nu."
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 820.0
+offset_top = 878.0
+offset_right = 1091.0
+offset_bottom = 900.0
+theme_override_constants/outline_size = 3
+text = "Klik ergens om door te gaan..."
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_right = 1915.0
+offset_bottom = 948.0
+mouse_default_cursor_shape = 2
+metadata/_edit_lock_ = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_bl24s")
+autoplay = true
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_ix241")
+volume_db = -15.0
+autoplay = true

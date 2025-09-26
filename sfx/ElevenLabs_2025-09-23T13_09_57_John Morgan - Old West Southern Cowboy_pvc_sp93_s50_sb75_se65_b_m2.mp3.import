@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bolyqmm5y6cmo"
+path="res://.godot/imported/ElevenLabs_2025-09-23T13_09_57_John Morgan - Old West Southern Cowboy_pvc_sp93_s50_sb75_se65_b_m2.mp3-0a67d9206453de9350972289f09c19ab.mp3str"
+
+[deps]
+
+source_file="res://sfx/ElevenLabs_2025-09-23T13_09_57_John Morgan - Old West Southern Cowboy_pvc_sp93_s50_sb75_se65_b_m2.mp3"
+dest_files=["res://.godot/imported/ElevenLabs_2025-09-23T13_09_57_John Morgan - Old West Southern Cowboy_pvc_sp93_s50_sb75_se65_b_m2.mp3-0a67d9206453de9350972289f09c19ab.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

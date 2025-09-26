@@ -1,0 +1,90 @@
+[gd_scene load_steps=5 format=3 uid="uid://dtnxvb6vu7x8f"]
+
+[ext_resource type="Script" uid="uid://da42t6ygn2lbo" path="res://game_over_menu.gd" id="1_prwox"]
+[ext_resource type="Texture2D" uid="uid://c5xq6r1o8d7w4" path="res://Images/Game over.png" id="2_prwox"]
+[ext_resource type="AudioStream" uid="uid://c5mbctnbdiaeg" path="res://sfx/call_of_duty_world_at_war_-_nacht_der_untoten_deathgame_over_song.wav" id="3_wp3el"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_prwox"]
+
+[node name="game over menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1908.0
+offset_bottom = 948.0
+script = ExtResource("1_prwox")
+
+[node name="restartbutton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 977.0
+offset_top = 638.0
+offset_right = 1226.0
+offset_bottom = 713.0
+mouse_default_cursor_shape = 2
+text = "Try again!"
+
+[node name="main_menu_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 978.0
+offset_top = 527.0
+offset_right = 1234.0
+offset_bottom = 599.0
+mouse_default_cursor_shape = 2
+text = "Main menu"
+
+[node name="quit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 689.0
+offset_top = 638.0
+offset_right = 947.0
+offset_bottom = 712.0
+mouse_default_cursor_shape = 2
+
+[node name="highscore" type="Button" parent="."]
+layout_mode = 0
+offset_left = 688.0
+offset_top = 521.0
+offset_right = 948.0
+offset_bottom = 602.0
+mouse_default_cursor_shape = 2
+
+[node name="submitbutton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 900.0
+offset_top = 438.0
+offset_right = 1017.0
+offset_bottom = 471.0
+mouse_default_cursor_shape = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(954, 474)
+texture = ExtResource("2_prwox")
+metadata/_edit_lock_ = true
+
+[node name="nameInput" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 822.0
+offset_top = 392.0
+offset_right = 1099.0
+offset_bottom = 431.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_prwox")
+
+[node name="scoreLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1234.0
+offset_top = 202.0
+offset_right = 1293.0
+offset_bottom = 255.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+
+[node name="sfx_game_over" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_wp3el")
+
+[connection signal="pressed" from="restartbutton" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="main_menu_button" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="highscore" to="." method="_on_highscore_pressed"]
+[connection signal="pressed" from="submitbutton" to="." method="_on_submit_button_pressed"]

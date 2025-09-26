@@ -1,0 +1,64 @@
+[gd_scene load_steps=3 format=3 uid="uid://82a261f6wkbi"]
+
+[ext_resource type="Script" uid="uid://b7yket5b5ljwr" path="res://menu.gd" id="1_lti8b"]
+[ext_resource type="Texture2D" uid="uid://bpekdyfhtm8fs" path="res://Images/Main menu.png" id="2_mae5d"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1908.0
+offset_bottom = 948.0
+script = ExtResource("1_lti8b")
+
+[node name="Play" type="Button" parent="."]
+layout_mode = 0
+offset_left = 831.0
+offset_top = 269.0
+offset_right = 1080.0
+offset_bottom = 341.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+text = "Play"
+
+[node name="controls" type="Button" parent="."]
+layout_mode = 0
+offset_left = 831.0
+offset_top = 381.0
+offset_right = 1084.0
+offset_bottom = 456.0
+size_flags_horizontal = 4
+mouse_default_cursor_shape = 2
+text = "Settings
+"
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 833.0
+offset_top = 592.0
+offset_right = 1086.0
+offset_bottom = 670.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+text = "Quit"
+
+[node name="Highscores" type="Button" parent="."]
+layout_mode = 0
+offset_left = 828.0
+offset_top = 490.0
+offset_right = 1080.0
+offset_bottom = 577.0
+mouse_default_cursor_shape = 2
+text = "Highscores"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(960, 475)
+texture = ExtResource("2_mae5d")
+
+[connection signal="mouse_entered" from="Play" to="." method="_on_play_mouse_entered"]
+[connection signal="mouse_exited" from="Play" to="." method="_on_play_mouse_exited"]
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="controls" to="." method="_on_controls_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Highscores" to="." method="_on_highscores_pressed"]

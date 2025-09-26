@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://xb7v3kgwguo3"]
+
+[ext_resource type="Script" uid="uid://cnwki147jihoo" path="res://soul_box.gd" id="1_c0xiw"]
+[ext_resource type="Texture2D" uid="uid://c5vodf0esx462" path="res://Images/soul_box_uit.png" id="1_cb632"]
+[ext_resource type="Texture2D" uid="uid://c1j3lqv1id2dy" path="res://Images/soul_box_aan.png" id="3_clkd8"]
+[ext_resource type="AudioStream" uid="uid://dm56rkwc0wxo" path="res://sfx/Turn_on.wav" id="4_ofwjd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c0xiw"]
+radius = 160.028
+
+[node name="SoulBox" type="Area2D" groups=["soul_boxes"]]
+collision_layer = 16
+collision_mask = 2
+script = ExtResource("1_c0xiw")
+kills_needed = 5
+inactive_texture = ExtResource("1_cb632")
+active_texture = ExtResource("3_clkd8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_cb632")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_c0xiw")
+
+[node name="sfx_turn_on" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_ofwjd")
+volume_db = -10.0

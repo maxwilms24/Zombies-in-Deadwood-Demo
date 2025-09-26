@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://bap0xya0gsjmb"]
+
+[ext_resource type="Script" uid="uid://6dewr1335pp2" path="res://money_ui.gd" id="1_eci41"]
+
+[node name="Money_UI" type="Control"]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource("1_eci41")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = -13.0
+offset_top = -47.0
+offset_right = 27.0
+offset_bottom = -24.0
+theme_override_colors/font_color = Color(0, 0.66749895, 1.347661e-06, 1)
+theme_override_constants/outline_size = 5
+text = "$ 0"

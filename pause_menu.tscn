@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgadulnjt1tma"]
+
+[ext_resource type="Script" uid="uid://ica7lhim48tk" path="res://pause_menu.gd" id="1_nwcfo"]
+
+[node name="PauseMenu" type="CanvasLayer"]
+process_mode = 2
+script = ExtResource("1_nwcfo")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 756.0
+offset_bottom = 314.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.5803922, 0.5803922, 0.5803922, 0.5882353)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+offset_right = 1908.0
+offset_bottom = 962.0
+
+[node name="Label" type="Label" parent="CenterContainer"]
+layout_mode = 2
+text = "Pause"
